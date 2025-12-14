@@ -9,15 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var clickedItem = this.parentElement;
             var isActive = clickedItem.classList.contains('active');
             
-            var allItems = document.querySelectorAll('.faq-item');
-            for (var j = 0; j < allItems.length; j++) {
-                if (allItems[j] !== clickedItem) {
-                    allItems[j].classList.remove('active');
-                    var answer = allItems[j].querySelector('.faq-answer');
-                    answer.classList.remove('active');
-                }
-            }
-            
+            // Simply toggle the clicked item only - no closing of other items
             if (isActive) {
                 clickedItem.classList.remove('active');
                 var ans = clickedItem.querySelector('.faq-answer');
